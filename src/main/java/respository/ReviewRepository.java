@@ -1,4 +1,4 @@
-package repository;
+package respository;
 
 import model.Review;
 import org.hibernate.Session;

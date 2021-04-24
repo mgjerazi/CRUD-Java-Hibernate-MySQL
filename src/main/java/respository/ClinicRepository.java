@@ -1,4 +1,4 @@
-package repository;
+package respository;
 
 import model.Clinic;
 import org.hibernate.Session;

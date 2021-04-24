@@ -3,9 +3,9 @@ import model.Clinic;
 import model.Review;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import repository.ClinicRepository;
-import repository.ReviewRepository;
-import repository.UserRepository;
+import respository.ClinicRepository;
+import respository.ReviewRepository;
+import respository.UserRepository;
 import util.HibernateUtils;
 
 
