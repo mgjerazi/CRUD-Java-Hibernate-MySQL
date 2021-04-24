@@ -11,6 +11,7 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer reservationId;
     private LocalDateTime dateOfReservation;
+    private String description;
 
     @ManyToOne
     @JoinColumn(name = "vetId")
@@ -52,11 +53,20 @@ public class Reservation {
         this.dateOfReservation = dateOfReservation;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "Reservation{" +
                 "reservationId=" + reservationId +
                 ", dateOfReservation=" + dateOfReservation +
+                ", description=" + description +
                 '}';
     }
 }
