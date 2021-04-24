@@ -53,4 +53,13 @@ public class PetRespository {
         session.close();
         return puppy;
     }
+
+    public Puppy findById(Integer puppyId) {
+        SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        Puppy puppy= session.find(Puppy.class, puppyId);
+        session.close();
+        return puppy;
+
+    }
 }

@@ -1,20 +1,11 @@
 import model.User;
 import model.Clinic;
 import model.Review;
-import respository.ConsultRepository;
-import respository.PetRepository;
-import Repository.UserRepository;
+import respository.*;
 import model.Puppy;
 import model.Reservation;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import respository.ClinicRepository;
-import respository.ReviewRepository;
-import respository.UserRepository;
-import repository.ClinicRepository;
-import repository.ReviewRepository;
-import repository.UserRepository;
-import respository.UserRepository;
 import util.HibernateUtils;
 
 
@@ -161,8 +152,8 @@ public class Application {
 
         User user2 = userRepository.findById(1);
 
-        PetRepository petRepository=new PetRepository();
-        Puppy puppy = petRepository.findById(1);
+        PetRespository petRespository = new PetRespository();
+        Puppy puppy = petRespository.findById(1);
 
 
         ConsultRepository consultRepository = new ConsultRepository();
