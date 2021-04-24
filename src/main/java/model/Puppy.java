@@ -1,6 +1,5 @@
 package model;
 
-import javax.imageio.spi.ServiceRegistry;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -16,7 +15,7 @@ public class Puppy {
     private String name;
     private String race;
     private LocalDateTime dateOfBirth;
-    @Column(name = "isVacinated",columnDefinition = "TINYINT")
+    @Column(name = "isVacinated", columnDefinition = "TINYINT")
     private boolean isVaccinated;
 
     @ManyToOne
