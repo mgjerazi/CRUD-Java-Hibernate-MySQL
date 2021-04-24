@@ -8,6 +8,9 @@ import model.Puppy;
 import model.Reservation;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import respository.ClinicRepository;
+import respository.ReviewRepository;
+import respository.UserRepository;
 import repository.ClinicRepository;
 import repository.ReviewRepository;
 import repository.UserRepository;
@@ -29,8 +32,8 @@ public class Application {
         /*
         create new pet
         UserRepository userRepository = new UserRepository();
-        User user2 = userRepository.findById(1);
-        System.out.println(user2);
+        User user = userRepository.findById(1);
+        System.out.println(user);
 
         PetRespository petRespository = new PetRespository();
         Puppy puppy = new Puppy();
@@ -39,7 +42,7 @@ public class Application {
         puppy.setRace("gold retriever");
         puppy.setDateOfBirth(LocalDateTime.of(LocalDate.of(2020, Month.JANUARY,01), LocalTime.now()));
         puppy.setVaccinated(true);
-        puppy.setUser(user2);
+        puppy.setUser(user);
         petRespository.createPuppy(puppy);
 
          */
@@ -141,7 +144,7 @@ public class Application {
 
         //Task4 per User dhe Delete
         System.out.println("Task4");
-//        userRepository.delete(user2);
+//        userRepository.delete(user);
 
         //Delete reviews on the database
 //        Review review5 = session.find(Review.class, 5);
