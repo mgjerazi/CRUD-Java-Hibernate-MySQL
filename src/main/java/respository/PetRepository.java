@@ -1,4 +1,4 @@
-package Repository;
+package respository;
 
 import model.Puppy;
 import model.User;

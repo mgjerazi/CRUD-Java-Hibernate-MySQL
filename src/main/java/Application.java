@@ -1,18 +1,17 @@
 import model.User;
 import model.Clinic;
 import model.Review;
-import Repository.ConsultRepository;
-import Repository.PetRepository;
+import respository.ConsultRepository;
+import respository.PetRepository;
 import Repository.UserRepository;
 import model.Puppy;
 import model.Reservation;
-import model.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import repository.ClinicRepository;
 import repository.ReviewRepository;
 import repository.UserRepository;
-import org.hibernate.Transaction;
+import respository.UserRepository;
 import util.HibernateUtils;
 
 
@@ -30,8 +29,8 @@ public class Application {
         /*
         create new pet
         UserRepository userRepository = new UserRepository();
-        User user = userRepository.findById(1);
-        System.out.println(user);
+        User user2 = userRepository.findById(1);
+        System.out.println(user2);
 
         PetRespository petRespository = new PetRespository();
         Puppy puppy = new Puppy();
@@ -40,7 +39,7 @@ public class Application {
         puppy.setRace("gold retriever");
         puppy.setDateOfBirth(LocalDateTime.of(LocalDate.of(2020, Month.JANUARY,01), LocalTime.now()));
         puppy.setVaccinated(true);
-        puppy.setUser(user);
+        puppy.setUser(user2);
         petRespository.createPuppy(puppy);
 
          */
@@ -131,7 +130,7 @@ public class Application {
         System.out.println("Task3");
 
 
-        //task3 per user
+        //task3 per user2
         user.setPassword("admin1");
         userRepository.update(user);
 
@@ -142,7 +141,7 @@ public class Application {
 
         //Task4 per User dhe Delete
         System.out.println("Task4");
-//        userRepository.delete(user);
+//        userRepository.delete(user2);
 
         //Delete reviews on the database
 //        Review review5 = session.find(Review.class, 5);
@@ -157,11 +156,7 @@ public class Application {
         session.close();
 
 
-        Transaction transaction = session.beginTransaction();
-
-
-        UserRepository userRepository= new UserRepository();
-        User user = userRepository.findById(1);
+        User user2 = userRepository.findById(1);
 
         PetRepository petRepository=new PetRepository();
         Puppy puppy = petRepository.findById(1);
@@ -172,7 +167,7 @@ public class Application {
         reservation.setReservationId(1);
         reservation.setDateOfReservation(LocalDateTime.now());
         reservation.setPuppy(puppy);
-        reservation.setUser(user);
+        reservation.setUser(user2);
         reservation.setDescription("VAKSINE");
        /* consultRepository.createReservation(reservation);*/
 
@@ -187,8 +182,6 @@ public class Application {
 
         Reservation reservation1 = consultRepository.findConsultById(1);
         System.out.println(reservation1);
-
-
 
 
 

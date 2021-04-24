@@ -1,4 +1,4 @@
-package Repository;
+package respository;
 
 import model.Reservation;
 import model.User;
