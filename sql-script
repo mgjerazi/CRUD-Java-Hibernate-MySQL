@@ -1,0 +1,76 @@
+create database pet_clinic;
+use pet_clinic;
+
+create table users(userId int Primary Key auto_increment not null,
+firstName varchar(40) not null,
+lastName varchar(40) not null,
+username varchar(40) not null,
+password varchar(40) not null,
+phone varchar(40) not null,
+email varchar(40) not null
+ );
+ 
+create table puppies(puppyId int Primary Key auto_increment not null,
+name varchar(40) not null,
+race varchar(40) not null,
+dateOfBirth date not null,
+isVacinated tinyint not null
+ );
+ 
+ create table reservations(reservationId int Primary Key auto_increment not null,
+dateOfReservation date not null,
+description varchar(40) not null
+ );
+ 
+ create table reviews(reviewId int Primary Key auto_increment not null,
+gade int not null,
+review varchar(100) not null
+ );
+ 
+ create table rloes (roleId int Primary Key auto_increment not null,
+ role varchar(40) not null);
+ 
+ create table user_roles (user_roleId int Primary Key auto_increment not null);
+ 
+ create table clinics (clinicId int Primary Key auto_increment not null,
+ clinic varchar(40) not null,
+ address varchar(40) not null);
+ 
+ alter table puppies add column ownerId int not null ;
+ alter table puppies add constraint ownerId
+ foreign key (ownerId) references users(userId);
+ 
+ alter table reservations add column vetId int not null;
+ alter table reservations add column puppyId int not null;
+ alter table reservations add foreign key (vetId) references users(userId);
+ alter table reservations add foreign key (puppyId) references puppies(puppyId);
+ 
+alter table reviews add column userId int not null;
+alter table reviews add column clinicId int not null;
+ alter table reviews add constraint userId
+ foreign key (userId) references users(userId);
+ 
+alter table reviews add constraint clinicId
+ foreign key (clinicId) references clinics(clinicId);
+ alter table user_roles add column userId int not null;
+ alter table user_roles add column roleId int not null;
+
+alter table user_roles add constraint userId_role
+ foreign key (userId) references users(userId);
+ alter table  rloes rename roles; 
+ alter table user_roles add constraint roleId_user
+ foreign key (roleId) references roles(roleId);
+ 
+insert into users values (1,'Aleksia','Bega', 'abega', 'abega' , '123456', 'abega@gmail.com');
+insert into users values (2,'Mariol','Gjerazi', 'mgjerazi', 'mgjerazi' , '78910', 'mgjerazi@gmail.com');
+insert into users values (3,'Erjon','Zeqiri', 'ezeqiri', 'ezeqiri' , '147102', 'mgjerazi@gmail.com');
+insert into users values (4,'Lorena','Bulku', 'lbulku', 'lbulku' , '567890', 'lbulku@gmail.com');
+
+insert into clinics values (1,'PetClinic','Bulevardi Zogu 1');
+insert into clinics values (2,'PetClinic2','Bulevardi Zogu 2');
+insert into clinics values (3,'PetClinic3','Bulevardi Zogu 3');
+
+insert into puppies values (1,'Xhoi','Pitbull', '2015-08-19', True , '2' );
+insert into puppies values (2,'ROCCO','haski', '2017-06-22', False , '3' );
+insert into puppies values (3,'Haciko','Golden Retriever', '2019-04-19', true , '4');
+insert into puppies values (4,'Spike','Bulldog', '2016-07-02', False , '1');
