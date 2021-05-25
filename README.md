@@ -1,2 +1,2 @@
-# pet_clinic
+# Pet-Clinic
 
