@@ -1,1 +1,1 @@
-CRUD with Java, Hibernate and MySQL
+Pet-Clinic
