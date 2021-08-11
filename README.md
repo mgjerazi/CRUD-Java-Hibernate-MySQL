@@ -15,11 +15,12 @@ MySql
 
 - Tools used
 
+MySQL running locally
+
 Git 2.92.2
 
 IntelliJ IDEA 2021.1.1
 
-MySQL running locally
 
 MySQL Database Relationship screenshots below
 
