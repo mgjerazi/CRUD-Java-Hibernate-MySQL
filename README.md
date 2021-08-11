@@ -20,3 +20,7 @@ Git 2.92.2
 IntelliJ IDEA 2021.1.1
 
 MySQL running locally
+
+MySQL Database Relationship screenshots below
+
+![Pet-Clinic](https://user-images.githubusercontent.com/74839767/129040717-2bcbbd7b-23b4-4c9a-93a8-5bed528a8de0.PNG)
